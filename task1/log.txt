@@ -1,0 +1,11 @@
+commit afa3a978d9125da6ffec62ef43b3b3d4a341b88c (HEAD -> master)
+Author: Vladislav <vlad.malinovsky.98@gmail.com>
+Date:   Thu Feb 8 19:59:09 2018 +0300
+
+    add status.txt
+
+commit 1a6f2f532ef23e19ecb9a36dfdb798b0b7f8127e
+Author: Vladislav <vlad.malinovsky.98@gmail.com>
+Date:   Thu Feb 8 19:54:08 2018 +0300
+
+    add.gitignore
