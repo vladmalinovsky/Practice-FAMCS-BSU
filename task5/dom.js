@@ -15,10 +15,17 @@ var dom=(function(){
         month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
     };
 
+    function empty(){
+        tape.innerHTML='';
+    }
+
     function removePhotoPost(id) {
         var found = document.getElementById(id);
         if (found){
             found.remove();
+            modul.removePhotoPost(id);
+            empty();
+            displayPhotoPosts();
             return true;
         }
         else
@@ -41,6 +48,8 @@ var dom=(function(){
      function addPhotoPost(photoPost) {
         if (modul.addPhotoPost(photoPost)) {
             tape.appendChild(fillImages(photoPost));
+            empty();
+            displayPhotoPosts();
             return true;
         }
         return false;
@@ -51,11 +60,12 @@ var dom=(function(){
          copy.id = photoPost.id;
          if (photoPost.photoLink)
              copy.querySelector('img').src = photoPost.photoLink;
-         if(user===null){
+         if(user===null||user===undefined){
              copy.querySelector('.buttondelete').style.display='none';
              copy.querySelector('.buttonedit').style.display='none';
              copy.querySelector('.buttonlike').style.display='none';
          }
+         else
          if(user.toLowerCase()!==photoPost.author.toLowerCase()){
              copy.querySelector('.buttondelete').style.display='none';
              copy.querySelector('.buttonedit').style.display='none';
@@ -74,15 +84,20 @@ var dom=(function(){
     });
     }
 
-    function getuser(user){
-        if(user!==null){
-
-            document.querySelector('.mybutton.button_user').innerHTML=user+"<hr>Log out</a></h5>";
+    function getuser(nickname){
+        if(nickname!==null&&nickname!==undefined){
+            user=nickname;
+            document.querySelector('.mybutton.button_user').innerHTML=nickname+"<hr>Log out</a></h5>";
+            empty();
+            displayPhotoPosts();
         }
-        else
+        if(nickname===undefined)
         {
+            user=null;
             document.querySelector('.mybutton.button_user').innerHTML="Log"+"<hr>in</a></h5>";
             document.querySelector('addphoto').remove();
+            empty();
+            displayPhotoPosts();
         }
     }
 
@@ -92,7 +107,8 @@ var dom=(function(){
         editPhotoPost,
         fillImages,
         addPhotoPost,
-        getuser
+        getuser,
+        empty
     }
 })();
 dom.getuser(user);
