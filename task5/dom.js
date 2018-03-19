@@ -112,4 +112,4 @@ var dom=(function(){
     }
 })();
 dom.getuser(user);
-dom.displayPhotoPosts();
+//dom.displayPhotoPosts();
