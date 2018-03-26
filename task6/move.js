@@ -72,17 +72,17 @@ function addPost() {
     dom.addPhotoPost(photoPost);
 }
 
-function removeNews(currentNews) {
-    const id = currentNews.id;
+function removefp(current) {
+    const id = current.id;
     dom.removePhotoPost(id).then(() => {
         dom.displayPhotoPosts();
     });
     }
 
     var num;
- function edit(currentNews){
+ function edit(current){
 
-    num=currentNews.id;
+    num=current.id;
      document.querySelector('main').style.display = 'none';
      document.querySelector('.add-posts').style.display = 'none';
      document.querySelector('.edit-posts').style.display = '';
