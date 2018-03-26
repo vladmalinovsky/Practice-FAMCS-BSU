@@ -1,0 +1,22 @@
+{
+  "name": "photo-portal",
+  "version": "1.0.0",
+  "description": "photoposts",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vlad",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/malinovsVS/Practice-FAMCS-BSU"
+  },
+  "keywords": [
+    "Malinovsky"
+  ]
+}
