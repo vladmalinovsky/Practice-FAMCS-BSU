@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <title>Photo Inspire</title>
+  <link rel="stylesheet" href="styles.css">
+  </head>
+<body>
+
+  <header class="container group">
+      <h1 class="logotype">
+      <a href="index.html">Photo<br>Inspire</a>
+	     </h1>
+		 <h5>
+		 <a class="mybutton button_user" onclick ="auth();dom.getuser()"><hr></a></h5>
+		 </header>
+
+
+  <div class="lenta">
+	  <div class="grid">
+
+          <div class="authorization">
+              <div class="aut-login"> <p><b>Login:</br></b><input id="autinput" type="text" size="30" placeholder="******"></p></div>
+              <div class="aut-password"> <p><b>Password:</br></b> <input id="autinput1" type="password" size="30" placeholder="******"> </p></div>
+              <button class="aut-btn-sgnup" onclick="logIn()">Sign In</button>
+          </div>
+      </br>
+
+
+
+
+          <div class="b-popup-author">
+              <h5>Filter by</h5>
+              <div class="b-popup-content-author">
+                  <input id="filter" type="text" size="20" placeholder="Author">
+                  </br><button class="find-author" onclick="filterNews();">Search</button>
+              </div>
+          </div>
+
+          <div class="b-popup-hashtags">
+              <div class="b-popup-content-hashtags">
+                  <input id="hash" type="text" size="20" placeholder="#Hashtag">
+                  </br><button class="find-hashtag" onclick="filterNews();">Search</button>
+              </div>
+          </div>
+
+          <div class="b-popup-date">
+          <div class="b-popup-content-date"><p>From date</p>
+              <input id="date-filter-from" type="date"><p>To date</p>
+              <input id="date-filter-to" type="date">
+              </br><button class="find-date" onclick="filterNews();">Search</button>
+          </div>
+      </div>
+
+
+		<div id="template" style="display: none;">
+		<div class="photopost post">
+		<h5></h5>
+             <img width="650" height="350">
+            <div class="eventHandler">
+                <input type="button" class="buttondelete" onclick="removeNews(this.parentNode.parentNode)">
+                <input type="button" class="buttonlike" onclick="like(this.parentNode.parentNode)">
+                <input type="button" class="buttonedit" onclick="edit(this.parentNode.parentNode)">
+            </div>
+		   
+			 <p></p>
+			 <h2></h2>
+        </div>
+		</div>
+		<main></main>
+          <div class="error"><h6>Something goes wrong</h6>
+              <img src="error.jpg" width="650" height="350" alt="error">
+          </div>
+          <form class="add-posts" name="create" onsubmit="return false;">
+              <div class="add-posts-text">
+                  <div class="add-posts-name"> <p><b>Description</br></b><textarea class="add-posts-box" rows="2" cols="100" maxlength="100" name="descriprion"></textarea></p></div>
+                  <div class="add-posts-img"> <p><b>Image(input your photolink)</br></b><textarea class="add-posts-box" rows="1" cols="100" name="photoLink"></textarea></p></div>
+                 <div class="add-posts-shd"> <p><b>HashTags(input your hashtags dividing by space)</br></b><textarea class="add-posts-box" rows="3" cols="100" maxlength="200" name="hashTags"></textarea></p></div>
+              </div>
+              <input type="submit" onclick="addPost()" name="submit" value="Add post">
+          </form>
+
+          <form class="edit-posts" name="createl" onsubmit="return false;">
+              <div class="edit-posts-text">
+                  <div class="edit-posts-name"> <p><b>Description</br></b><textarea class="edit-posts-box" rows="2" cols="100" maxlength="100" name="descriprion"></textarea></p></div>
+                  <div class="edit-posts-img"> <p><b>Image(input your photolink)</br></b><textarea class="edit-posts-box" rows="1" cols="100" name="photoLink"></textarea></p></div>
+                  <div class="edit-posts-shd"> <p><b>HashTags(input your hashtags dividing by space)</br></b><textarea class="edit-posts-box" rows="3" cols="100" maxlength="200" name="hashTags"></textarea></p></div>
+              </div>
+              <input type="submit" onclick="editclick()" name="submit" value="Edit post">
+          </form>
+		
+		<br><div class="tape">
+      </div>
+		<input type="submit" onclick="showMoreArticles()" name="submit" value="Download more photos">
+		</br>
+      </div>
+    </div>
+		
+	      </div>
+    </div> 
+  
+  
+  <footer class="container group">
+  <h1>Photo<br>Inspire</h1>
+      <h5>Created by Vlad Malinovsky</h5>
+      <h5> 2 course 5 group</h5>
+      <h5>E-mail: vlad.malinovsky.98@gmail.com</h5>
+      <h5>Last update: 26 February,2018</h5>
+  </footer>
+	 <script src="index.js"></script>
+	 <script src="dom.js"></script>
+     <script src="move.js"></script>
+     <script src="posts.js"></script>
+</body>
+</html>
