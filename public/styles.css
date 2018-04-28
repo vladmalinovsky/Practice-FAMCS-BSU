@@ -1,0 +1,167 @@
+html, body, div,
+h1, h2, h3, h4, h5, h6, p, 
+a,img, footer, header,
+section
+ {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+body {
+  background: #47525e;
+  font: 250 17px/21px calibri, Arial;
+}
+.lenta {
+  min-width: 960px;
+  background: #fff;
+  padding: 66px 0 44px 0;
+  text-align:center;
+}
+.container{
+  margin: 0 auto;
+  width: 980 px;
+  float:center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.grid{
+  margin: 0 auto;
+  width: 980 px;
+  float:center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.post{
+  padding-left: 15px;
+  padding-right: 15px;
+  display: inline-block;
+  vertical-align: top;
+  width: 33.33%;
+}
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+h1,h3{
+  color: #fff;
+}
+h2{
+	color:#87CEEB;
+}
+h1,h3,h5,p {
+  margin-bottom: 22px;
+}
+h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+h3 {
+  font-size: 21px;
+}
+h5 {
+  color: #D3D3D3;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+h6 {
+    color: #D3D3D3;
+    font-size: 34px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+hr {
+    border: none;
+    background-color: white; 
+    color: white; 
+    height: 2px; 
+   }
+.logotype {
+  float: left;
+  font-size: 48px;
+  font-weight: 100;
+  letter-spacing: .5px;
+  line-height: 44px;
+  padding: 40px 0 22px 0;
+  text-transform: uppercase;
+}
+.photopost img {
+	float:center;
+  border-radius: 5px;
+  margin-bottom: 22px;
+  max-width: 100%;
+  }
+  
+.mybutton{
+	float:right;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 400;
+  letter-spacing: .5px;
+  margin-top: 35px;
+  text-transform: uppercase;
+}
+.button_user {
+  border: 1px solid #fff;
+  padding: 10px 30px;
+}
+.buttondelete 
+{
+	cursor:pointer;
+    background: url(delete.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+	border:0px;
+	outline:none;
+}
+.buttonlike{
+	background: url(heart.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+	border:0px;
+	outline:none;
+	cursor:pointer;
+}
+.buttonedit{
+	background: url(correct.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+	border:0px;
+	outline:none;
+	cursor:pointer;
+}
+.aut-login{
+    border-radius: 5px;
+}
+.aut-password{
+    border-radius: 5px;
+}
+
+.error {
+    background-color:#fff;
+    margin: 12% 55% 60% 28%;
+    padding: 5px 5px;
+    text-align: center;
+    border-radius: 10px;
+    position: fixed;
+}
+
+.error{
+    margin-top: 20%;
+}
