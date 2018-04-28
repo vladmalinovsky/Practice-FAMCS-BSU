@@ -1,0 +1,66 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <iostream>
+#include <fstream>
+#include <queue>
+#include <stack>
+using namespace std;
+struct smezh
+{
+	queue<int> ff;
+};
+stack<int> gg;
+int n;
+int *key;
+bool*met;
+int metka = 1;
+smezh*mass;
+void dfs(int ind)
+{
+	met[ind] = true;
+	key[ind] = metka++;
+	while (mass[ind].ff.size() != 0)
+	{
+		if (met[mass[ind].ff.front()] != true)
+			dfs(mass[ind].ff.front());
+		mass[ind].ff.pop();
+	}
+}
+
+int main()
+{
+	FILE *ft;
+	ft = fopen("input.txt", "rt");
+	fscanf(ft, "%d", &n);
+	key = new int[n + 1];
+	met = new bool[n + 1];
+	for (int i = 1; i < n + 1; i++)
+		met[i] = false;
+	mass= new smezh[n + 1];
+	queue<int> gg;
+	int **matrix;
+	matrix = new int*[n + 1];
+	for (int i = 1; i < n + 1; i++)
+		matrix[i] = new int[n + 1];
+
+	for (int i = 1; i < n + 1; i++)
+	{
+		for (int j = 1; j < n + 1; j++)
+		{
+			fscanf(ft, "%d", &matrix[i][j]);
+			if (matrix[i][j] == 1) {
+				mass[i].ff.push(j); 
+			}
+		}
+	}
+
+	for (int i = 1; i < n + 1; i++)
+	{
+		if (met[i] != true) dfs(i);
+	}
+	ofstream fout;
+	fout.open("output.txt");
+	for (int i = 1; i < n + 1; i++) { fout << key[i] << " "; }
+	fout.close();
+	system("pause");
+	return 0;
+}
